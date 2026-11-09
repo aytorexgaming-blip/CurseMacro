@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Curse Macro</string>
+    <string name="accessibility_service_description">Lets Curse Macro simulate taps for your own macro sequence. Only runs when you start it.</string>
+</resources>
