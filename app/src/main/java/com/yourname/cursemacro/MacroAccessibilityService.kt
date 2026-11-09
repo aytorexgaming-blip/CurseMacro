@@ -17,7 +17,7 @@ class MacroAccessibilityService : AccessibilityService() {
             if (!MacroStore.isRunning || MacroStore.steps.isEmpty()) return
 
             val step = MacroStore.steps[currentStepIndex]
-            performTap(step.x, step.y)
+            tapAt(step.x, step.y)
 
             currentStepIndex++
             if (currentStepIndex >= MacroStore.steps.size) {
@@ -42,7 +42,7 @@ class MacroAccessibilityService : AccessibilityService() {
         handler.removeCallbacks(stepRunnable)
     }
 
-    private fun performTap(x: Float, y: Float) {
+    fun tapAt(x: Float, y: Float) {
         val path = Path().apply { moveTo(x, y) }
         val gesture = GestureDescription.Builder()
             .addStroke(GestureDescription.StrokeDescription(path, 0, 50))
