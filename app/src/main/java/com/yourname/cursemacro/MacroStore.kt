@@ -1,5 +1,7 @@
 package com.yourname.cursemacro
 
+import android.graphics.Bitmap
+
 object MacroStore {
     val steps = mutableListOf<TapStep>()
 
@@ -8,4 +10,10 @@ object MacroStore {
 
     @Volatile
     var loopCount = 0
+
+    @Volatile
+    var referenceBitmap: Bitmap? = null
+
+    @Volatile
+    var isLootWatching = false
 }
